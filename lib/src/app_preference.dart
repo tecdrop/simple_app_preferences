@@ -94,7 +94,7 @@ class AppPreferenceEx<T, S> extends AppPreference<T> {
   /// method.
   @override
   void loadValue(SharedPreferences prefs) {
-    super.loadValue(prefs);
+    _prefs = prefs;
     _value = valueLoader(_getValue<S>(_prefs, key, valueSaver(_value)));
   }
 
