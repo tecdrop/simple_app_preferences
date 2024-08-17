@@ -2,7 +2,7 @@ name: simple_app_preferences
 description: A simple, type-safe, and easy-to-use app preferences package for Flutter.
 repository: https://github.com/tecdrop/simple_app_preferences
 issue_tracker: https://github.com/tecdrop/simple_app_preferences/issues
-version: 0.0.2
+version: 0.0.3
 
 environment:
   sdk: ^3.5.0

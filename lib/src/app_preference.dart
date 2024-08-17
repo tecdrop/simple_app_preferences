@@ -68,12 +68,12 @@ class AppPreference<T> {
 /// [saveOnSet] property is set to true).
 class AppPreferenceEx<T, S> extends AppPreference<T> {
   AppPreferenceEx({
-    required T defaultValue,
-    required String key,
-    bool saveOnSet = true,
+    required super.defaultValue,
+    required super.key,
+    super.saveOnSet,
     required this.valueSaver,
     required this.valueLoader,
-  }) : super(defaultValue: defaultValue, key: key, saveOnSet: saveOnSet);
+  });
 
   /// A function that converts a value of the [S] type supported by [SharedPreferences] to the
   /// actual [T] type of this app preference.
@@ -118,15 +118,15 @@ class AppPreferenceEx<T, S> extends AppPreference<T> {
 /// the specified type, an exception is thrown.
 T _getValue<T>(SharedPreferences? prefs, String key, T defaultValue) {
   switch (T) {
-    case bool:
+    case const (bool):
       return (prefs?.getBool(key) ?? defaultValue) as T;
-    case int:
+    case const (int):
       return (prefs?.getInt(key) ?? defaultValue) as T;
-    case double:
+    case const (double):
       return (prefs?.getDouble(key) ?? defaultValue) as T;
-    case String:
+    case const (String):
       return (prefs?.getString(key) ?? defaultValue) as T;
-    case List<String>:
+    case const (List<String>):
       return (prefs?.getStringList(key) ?? defaultValue) as T;
     default:
       throw Exception('Unsupported type: $T');
@@ -139,15 +139,15 @@ T _getValue<T>(SharedPreferences? prefs, String key, T defaultValue) {
 /// String, or List<String>), otherwise an exception is thrown.
 Future<bool>? _setValue<T>(SharedPreferences? prefs, String key, T value) {
   switch (T) {
-    case bool:
+    case const (bool):
       return prefs?.setBool(key, value as bool);
-    case int:
+    case const (int):
       return prefs?.setInt(key, value as int);
-    case double:
+    case const (double):
       return prefs?.setDouble(key, value as double);
-    case String:
+    case const (String):
       return prefs?.setString(key, value as String);
-    case List<String>:
+    case const (List<String>):
       return prefs?.setStringList(key, value as List<String>);
     default:
       throw Exception('Unsupported type: $T');
