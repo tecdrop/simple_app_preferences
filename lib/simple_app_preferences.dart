@@ -2,6 +2,7 @@
 // Use of this source code is governed by a user license that can be
 // found in the LICENSE file.
 
-library simple_app_preferences;
+/// A simple, type-safe, and easy-to-use app preferences library for Flutter.
+library;
 
 export 'src/app_preference.dart' show AppPreference, AppPreferenceEx;
