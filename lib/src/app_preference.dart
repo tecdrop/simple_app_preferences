@@ -1,4 +1,4 @@
-// Copyright (c) 2018-2024 Tecdrop (https://www.tecdrop.com/). All rights reserved.
+// Copyright (c) 2018-2025 Tecdrop (https://www.tecdrop.com/). All rights reserved.
 // Use of this source code is governed by a user license that can be
 // found in the LICENSE file.
 
@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// An app preference of type [T] that can be loaded and saved to persistent storage.
 ///
 /// The [T] type must be one of the types supported by [SharedPreferences] (bool, int, double,
-/// String, or List<String>), otherwise an exception is thrown.
+/// String, or List&lt;String&gt;), otherwise an exception is thrown.
 ///
 /// The [SharedPreferences] instance used to load and save the value of this app preference is
 /// assigned when calling [loadValue], so this method must be called before saving the value to
@@ -112,7 +112,7 @@ class AppPreferenceEx<T, S> extends AppPreference<T> {
 /// Reads a value of the specified type from persistent storage.
 ///
 /// The [T] type must be one of the types supported by [SharedPreferences] (bool, int, double,
-/// String, or List<String>), otherwise an exception is thrown.
+/// String, or List&lt;String&gt;), otherwise an exception is thrown.
 ///
 /// If the value is not found, the default value is returned. If the value is found but is not of
 /// the specified type, an exception is thrown.
@@ -136,7 +136,7 @@ T _getValue<T>(SharedPreferences? prefs, String key, T defaultValue) {
 /// Saves a value of the specified type to persistent storage in the background.
 ///
 /// The [T] type must be one of the types supported by [SharedPreferences] (bool, int, double,
-/// String, or List<String>), otherwise an exception is thrown.
+/// String, or List&lt;String&gt;), otherwise an exception is thrown.
 Future<bool>? _setValue<T>(SharedPreferences? prefs, String key, T value) {
   switch (T) {
     case const (bool):
