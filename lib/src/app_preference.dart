@@ -138,6 +138,8 @@ T _getValue<T>(SharedPreferences? prefs, String key, T defaultValue) {
 /// The [T] type must be one of the types supported by [SharedPreferences] (bool, int, double,
 /// String, or List&lt;String&gt;), otherwise an exception is thrown.
 Future<bool>? _setValue<T>(SharedPreferences? prefs, String key, T value) {
+  assert(prefs != null, 'prefs is null. Please call loadValue() before saveValue()');
+
   switch (T) {
     case const (bool):
       return prefs?.setBool(key, value as bool);
