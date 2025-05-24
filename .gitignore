@@ -1,6 +1,3 @@
-.flutter-plugins
-.flutter-plugins-dependencies
-
 # Miscellaneous
 *.class
 *.log
@@ -29,5 +26,6 @@ migrate_working_dir/
 /pubspec.lock
 **/doc/api/
 .dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
 build/
-
